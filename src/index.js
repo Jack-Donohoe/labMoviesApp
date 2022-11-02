@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Navigate, Routes } from "react-router-dom";
 import HomePage from "./pages/homePage";
 import MoviePage from "./pages/movieDetailsPage";
 import FavouriteMoviesPage from "./pages/favouriteMoviesPage"; // NEW
+import AddMovieReviewPage from './pages/addMovieReviewPage';
 import {Link} from 'react-router-dom';
 import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader';
@@ -29,6 +30,7 @@ const App = () => {
        <SiteHeader />      {/* New Header  */}
       <MoviesContextProvider>
         <Routes>
+          <Route path="/reviews/form" element={<AddMovieReviewPage/>} />
           <Route path="/reviews/:id" element={ <MovieReviewPage /> } />
           <Route exact path="/movies/favourites" element={<FavouriteMoviesPage />} />
           <Route exact path="/movies/upcoming" element={<UpcomingMoviesPage />} />
